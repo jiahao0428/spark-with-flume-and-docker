@@ -10,18 +10,18 @@
 
 * __Create a overlay network in your master node, i created a overlay network named 'my-net':__
 
-    docker network create --driver overlay <my-multi-host-network>
+    <pre>docker network create --driver overlay <my-multi-host-network></pre>
 
 * __create a environment variable to directly control swarm in master node:__
 
-    export DOCKER_HOST=tcp://>master_ip>:4000
+    <pre>export DOCKER_HOST=tcp://>master_ip>:4000</pre>
 
 * __Run docker compose to set up multi-host containers in swarm, it will automatically deploy containers in nodes:__
 
-    docker-compose scale namenode=1 datanode=WHATEVER_YOU_WANT mongodb=1 flume=1
+    <pre>docker-compose scale namenode=1 datanode=WHATEVER_YOU_WANT mongodb=1 flume=1</pre>
 
 * __Run post.py to start collecting data from meetup.com to flume(Remember to change ip address inside the script):__
 
-    python post.py
+    <pre>python post.py</pre>
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
