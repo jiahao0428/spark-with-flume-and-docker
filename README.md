@@ -12,7 +12,7 @@ This is a spark toy which deploying docker containers in multi-hosts environment
 
     <pre>./bootstrap_docker.sh -i MASTER_IP</pre>
 
-* __Run bootstrap_slave.sh in all of your slave nodes__
+* __Run bootstrap_slave.sh in every slave nodes__
 
     <pre>./bootstrap_docker.sh -i NODE_IP -m MASTER_IP</pre>
 
