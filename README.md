@@ -8,6 +8,10 @@
 
 * __Run bootstrap_slave.sh in all of your slave nodes__
 
+*__MOUNT shared/ in every slave nodes by using sshfs:__
+
+    <pre>sshfs -o allow_other USER@MASTER_IP:PATH/TO/SHARED shared</pre>
+
 * __Create a overlay network in your master node, for example I created a overlay network named 'my-net':__
 
     <pre>docker network create --driver overlay MY-MULTI-HOST-NETWORK</pre>
