@@ -12,7 +12,7 @@
 
     <pre>docker network create --driver overlay <my-multi-host-network></pre>
 
-* __create a environment variable to directly control swarm in master node:__
+* __Create a environment variable to directly control swarm in master node:__
 
     <pre>export DOCKER_HOST=tcp://>master_ip>:4000</pre>
 
