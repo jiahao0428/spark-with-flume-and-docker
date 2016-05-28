@@ -22,6 +22,6 @@
 
 * __Run post.py to start collecting data from meetup.com to flume:__
 
-    <pre>python post.py <flume_url:8001></pre>
+    <pre>python post.py <flume_url:8001> </pre>
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
