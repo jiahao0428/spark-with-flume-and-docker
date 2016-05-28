@@ -1,0 +1,39 @@
+version: "2"
+services:
+  namenode:
+    image: jiahao0428/hadoop-spark-cluster
+    container_name: namenode
+    hostname: namenode
+    network_mode: "my-net"
+    volumes: 
+      - /home/eehpc/shared:/code
+    ports:
+      - "8088:8088"
+      - "50090:50090"
+      - "19888:19888"
+      - "4040:4040"
+    command: "/etc/bootstrap.sh -d -namenode"
+    expose:
+      - "8001"
+
+  datanode:
+    image: jiahao0428/hadoop-spark-cluster
+    network_mode: "my-net"
+    command: "/etc/bootstrap.sh -d -datanode"
+    
+  mongodb:
+    image: mongo
+    network_mode: "my-net"
+  
+  flume:
+    image: probablyfine/flume
+    volumes:
+      - /home/eehpc/shared:/code
+    environment:
+      - FLUME_AGENT_NAME=a1
+      - FLUME_CONF_FILE=/code/jiahao/flume.conf
+    network_mode: "my-net"
+    ports:
+      - "8001:8001"
+      - "4545:4545"
+
