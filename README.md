@@ -2,7 +2,7 @@
 
 * __Starting docker daemon with modifying /etc/default/docker:__
 
-    <pre>DOCKER_OPTS="-H tcp:////0.0.0.0:2375 -H unix:////var/run/docker.sock --cluster-store consul://*master_ip*:8500 --cluster-advertise eth1:2376"</pre>
+    <pre>DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock --cluster-store consul://*master_ip*:8500 --cluster-advertise eth1:2376"</pre>
 
 * __Run bootstrap_docker.sh to start consul and swarm container in your master node__
 
@@ -14,7 +14,7 @@
 
 * __Create a environment variable to directly control swarm in master node:__
 
-    <pre>export DOCKER_HOST=tcp:////*master_ip*:4000</pre>
+    <pre>export DOCKER_HOST=tcp://*master_ip*:4000</pre>
 
 * __Run docker compose to set up multi-host containers in swarm, it will automatically deploy containers in nodes:__
 
