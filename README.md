@@ -4,7 +4,7 @@ This is a spark toy which deploying docker containers in multi-hosts environment
 
 <br/><br/>
 
-* __Starting docker daemon with modifying /etc/default/docker:__
+* __Starting docker daemon with modifying /etc/default/docker in every nodes:__
 
     <pre>DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store consul://MASTER_IP:8500 --cluster-advertise eth1:2376"</pre>
 
