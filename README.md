@@ -10,7 +10,11 @@ This is a spark toy which deploying docker containers in multi-hosts environment
 
 * __Run bootstrap_docker.sh to start consul and swarm container in your master node__
 
+    <pre>./bootstrap_docker.sh -i MASTER_IP</pre>
+
 * __Run bootstrap_slave.sh in all of your slave nodes__
+
+    <pre>./bootstrap_docker.sh -i NODE_IP -m MASTER_IP</pre>
 
 * __Mount shared/ in every slave nodes by using sshfs:__
 
@@ -33,3 +37,5 @@ This is a spark toy which deploying docker containers in multi-hosts environment
     <pre>python post.py FLUME_URL:8001 </pre>
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
+
+    <pre>./flumecount.sh -i NAMENODE_CONTAINER_ID</pre>
