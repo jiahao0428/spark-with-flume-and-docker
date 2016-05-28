@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
 import requests
 import time
 import json
 
+flume_url = str(sys.argv[1])
 r = requests.get('http://stream.meetup.com/2/rsvps', stream=True)
 
 for line in r.iter_lines():
@@ -20,6 +22,6 @@ for line in r.iter_lines():
 	
 	payload = json.dumps([{'body': streamingStr}])
 	header = {'content-type': 'application/json'}
-	r = requests.post("http://192.168.1.130:8001", headers=header, data=payload)
+	r = requests.post(flume_url, headers=header, data=payload)
 	
 	print payload
