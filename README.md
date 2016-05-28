@@ -20,8 +20,8 @@
 
     <pre>docker-compose scale namenode=1 datanode=WHATEVER_YOU_WANT mongodb=1 flume=1</pre>
 
-* __Run post.py to start collecting data from meetup.com to flume(Remember to change ip address inside the script):__
+* __Run post.py to start collecting data from meetup.com to flume:__
 
-    <pre>python post.py</pre>
+    <pre>python post.py <flume_url:8001></pre>
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
