@@ -6,9 +6,9 @@
 
 * __Run bootstrap_docker.sh to start consul and swarm container in your master node__
 
-* __Run bootstrap_slave.sh in your slave nodes__
+* __Run bootstrap_slave.sh in all of your slave nodes__
 
-* __Create a overlay network in your master node, i created a overlay network named 'my-net':__
+* __Create a overlay network in your master node, for example I created a overlay network named 'my-net':__
 
     <pre>docker network create --driver overlay <my-multi-host-network></pre>
 
