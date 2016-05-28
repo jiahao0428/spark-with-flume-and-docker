@@ -2,7 +2,7 @@
 
 * __Starting docker daemon with modifying /etc/default/docker:__
 
-    DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store consul://<master_ip>:8500 --cluster-advertise eth1:2376"
+    <pre>DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store consul://<master_ip>:8500 --cluster-advertise eth1:2376"</pre>
 
 * __Run bootstrap_docker.sh to start consul and swarm container in your master node__
 
