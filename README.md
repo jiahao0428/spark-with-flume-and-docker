@@ -18,7 +18,7 @@
 
 * __Create a environment variable to directly control swarm in master node:__
 
-    <pre>export DOCKER_HOST=tcp://*MASTER_IP*:4000</pre>
+    <pre>export DOCKER_HOST=tcp://MASTER_IP:4000</pre>
 
 * __Run docker compose to set up multi-host containers in swarm, it will automatically deploy containers in nodes:__
 
