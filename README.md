@@ -8,7 +8,7 @@
 
 * __Run bootstrap_slave.sh in all of your slave nodes__
 
-*__MOUNT shared/ in every slave nodes by using sshfs:__
+* __Mount shared/ in every slave nodes by using sshfs:__
 
     <pre>sshfs -o allow_other USER@MASTER_IP:PATH/TO/SHARED shared</pre>
 
