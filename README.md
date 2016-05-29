@@ -1,6 +1,6 @@
 # spark-with-flume-and-docker
 <br/>
-This is a Spark toy which deploying Docker containers in multi-hosts environment, combining with Apache Flume to collect the streaming data from meetup.com and implement Spark streaming with word count and store the result to mongodb container.
+This is a Spark toy which deployed with Docker containers in multi-hosts environment, combining with Apache Flume to collect the streaming data from meetup.com and implement Spark streaming with word count and store the result to mongodb container.
 
 <br/><br/>
 
