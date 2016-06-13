@@ -7,6 +7,10 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 * __Starting docker daemon with modifying /etc/default/docker in every nodes:__
 
     <pre>DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store consul://MASTER_IP:8500 --cluster-advertise eth1:2376"</pre>
+    
+* __Run docker service as ROOT:__
+
+    <pre>service docker start</pre>
 
 * __Run bootstrap_docker.sh to start consul and swarm container in your master node__
 
