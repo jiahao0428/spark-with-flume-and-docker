@@ -26,7 +26,7 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Create a overlay network in your master node, for example I created a overlay network named 'my-net':__
 
-    <pre>docker network create --driver overlay MY-MULTI-HOST-NETWORK</pre>
+    <pre>docker network create --driver overlay my-net</pre>
 
 * __Create a environment variable to directly control swarm in master node:__
 
@@ -34,7 +34,7 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Run docker compose to set up multi-host containers in swarm, it will automatically deploy containers in nodes:__
 
-    <pre>docker-compose scale namenode=1 datanode=WHATEVER_YOU_WANT mongodb=1 flume=1</pre>
+    <pre>docker-compose scale namenode=1 datanode=AMOUNT_YOU_WANT mongodb=1 flume=1</pre>
 
 * __Run post.py to start collecting data from meetup.com to flume:__
 
