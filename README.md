@@ -18,7 +18,7 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Run bootstrap_slave.sh in every slave nodes__
 
-    <pre>./bootstrap_docker.sh -i NODE_IP -m MASTER_IP</pre>
+    <pre>./bootstrap_slave.sh -i NODE_IP -m MASTER_IP</pre>
 
 * __Mount shared/ in every slave nodes by using sshfs:__
 
