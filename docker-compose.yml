@@ -6,7 +6,7 @@ services:
     hostname: namenode
     network_mode: "my-net"
     volumes: 
-      - /home/eehpc/shared:/code
+      - ./shared:/code
     ports:
       - "8088:8088"
       - "50090:50090"
@@ -28,7 +28,7 @@ services:
   flume:
     image: probablyfine/flume
     volumes:
-      - /home/eehpc/shared:/code
+      - ./shared:/code
     environment:
       - FLUME_AGENT_NAME=a1
       - FLUME_CONF_FILE=/code/jiahao/flume.conf
