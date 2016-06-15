@@ -22,7 +22,7 @@ val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
 
 wordCounts.foreachRDD ( rdd => {
 	rdd.foreachPartition( partitionOfRecords => {
-		val mongoClient: MongoClient = MongoClient("mongodb://10.0.0.5")
+		val mongoClient: MongoClient = MongoClient("mongodb://mongo")
                 val database: MongoDatabase = mongoClient.getDatabase("meetup")
                 val collection: MongoCollection[Document] = database.getCollection("rsvps")
 		
