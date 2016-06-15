@@ -24,6 +24,7 @@ services:
   mongodb:
     image: mongo
     hostname: mongo
+    container_name: mongo
     network_mode: "my-net"
   
   flume:
