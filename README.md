@@ -30,7 +30,7 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Create a environment variable to directly control swarm in master node:__
 
-    <pre>export DOCKER_HOST=tcp://MASTER_IP:4000</pre>
+    <pre>export DOCKER_HOST=tcp://0.0.0.0:4000</pre>
 
 * __Run docker compose to set up multi-host containers in swarm, it will automatically deploy containers in nodes:__
 
@@ -38,7 +38,7 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Run post.py to start collecting data from meetup.com to flume:__
 
-    <pre>python post.py http://FLUME_CONTAINER_IP:8001 </pre>
+    <pre>python post.py http://FLUME_CONTAINER_HOST_IP:8001 </pre>
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
 
