@@ -42,4 +42,4 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
 
-    <pre>./flumecount.sh -i NAMENODE_CONTAINER_ID</pre>
+    <pre>./flumecount.sh</pre>
