@@ -29,6 +29,8 @@ services:
   
   flume:
     image: probablyfine/flume
+    hostname: flume
+    container_name: flume
     volumes:
       - ./shared:/code
     environment:
