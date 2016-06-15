@@ -38,7 +38,7 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
 * __Run post.py to start collecting data from meetup.com to flume:__
 
-    <pre>python post.py FLUME_URL:8001 </pre>
+    <pre>python post.py http://FLUME_CONTAINER_IP:8001 </pre>
 
 * __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
 
