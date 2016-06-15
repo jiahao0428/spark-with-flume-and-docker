@@ -23,6 +23,7 @@ services:
     
   mongodb:
     image: mongo
+    hostname: mongo
     network_mode: "my-net"
   
   flume:
