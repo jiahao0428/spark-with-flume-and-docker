@@ -12,6 +12,7 @@ services:
       - "50090:50090"
       - "19888:19888"
       - "4040:4040"
+      - "8080:8080"
     command: "/etc/bootstrap.sh -d -namenode"
     expose:
       - "8001"
