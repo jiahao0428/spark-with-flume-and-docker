@@ -1,8 +1,13 @@
 # spark-with-flume-and-docker
 <br/>
-This is a Spark toy which deployed with Docker containers in multi-hosts environment, combining with Apache Flume to collect the streaming data from meetup.com and implement Spark streaming with word count and store the result to mongodb container.
+This is a Spark toy which deployed with Docker containers in multi-hosts environment, combining with Apache Flume to collect the streaming data from meetup.com and implement Spark streaming with word count and store the result to hive(default) or mongodb container.
 
 <br/><br/>
+
+* __Modifying /lib/systemd/system/docker.service:__
+    
+    <pre>EnvironmentFile=-/etc/default/docker<br/>
+    ExecStart=/usr/bin/docker daemon $DOCKER_OPTS -H fd://</pre>
 
 * __Starting docker daemon with modifying /etc/default/docker in every nodes:__
 
@@ -20,9 +25,6 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
     <pre>./bootstrap_slave.sh -i NODE_IP -m MASTER_IP</pre>
 
-* __Mount shared/ in every slave nodes by using sshfs:__
-
-    <pre>sshfs -o allow_other USER@MASTER_IP:PATH/TO/SHARED shared</pre>
 
 * __Create a overlay network in your master node, for example I created a overlay network named 'my-net':__
 
@@ -36,10 +38,18 @@ This is a Spark toy which deployed with Docker containers in multi-hosts environ
 
     <pre>docker-compose scale namenode=1 datanode=AMOUNT_YOU_WANT mongodb=1 flume=1</pre>
 
+* __Copy Source Code to container:__
+
+    <pre>docker cp FOLDER_PATH CONTAINER_NAME:DESTINATION_PATH</pre>
+
 * __Run post.py to start collecting data from meetup.com to flume:__
 
     <pre>python post.py http://FLUME_CONTAINER_HOST_IP:8001 </pre>
 
-* __Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
+* __OPTION 1: Run flumecount.sh which will store the flume wordcount result into hive, but make sure you already create table 'src' in hive__
+
+    <pre>./flumecounthive.sh</pre>
+
+* __OPTION 2: Run flumecount.sh which will store the flume wordcount result into mongodb, but make sure you already create database in mongodb__
 
     <pre>./flumecount.sh</pre>
