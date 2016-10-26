@@ -18,7 +18,7 @@ val lines = flumeStream.map {
 val words = lines.flatMap(_.split(" "))
 val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
 
-//wordCounts.print()
+wordCounts.print()
 
 wordCounts.foreachRDD ( rdd => {
 	rdd.foreachPartition( partitionOfRecords => {
